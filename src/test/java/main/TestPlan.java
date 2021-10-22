@@ -28,6 +28,13 @@ public class TestPlan {
 
     }
 
+    @Test(testName = "Dropping element in drop box.", priority = 2)
+    public void secondTest(){
+
+        home.clickDroppable();
+
+    }
+
     @AfterTest
     public void endTest(){
 

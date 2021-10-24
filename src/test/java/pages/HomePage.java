@@ -14,8 +14,17 @@ public class HomePage extends PageObject{
     @FindBy(linkText = "Droppable")
     private WebElement droppable_option;
 
+    @FindBy(xpath = "//a[contains(text(),'Resizable')]")
+    private WebElement resizable_option;
+
     @FindBy(xpath = "/html/body/div[2]")
     private WebElement drop_box;
+
+    @FindBy(xpath = "//body/div[@id='resizable']/div[3]")
+    private WebElement resize_element;
+
+    @FindBy(xpath = "/html/body/div[1]/div[3]")
+    private WebElement change;
 
     public HomePage(WebDriver driver){
         super(driver);
@@ -40,6 +49,19 @@ public class HomePage extends PageObject{
         Actions drag_drop = new Actions(driver);
         driver.switchTo().frame(0);
         drag_drop.dragAndDropBy(driver.findElement(By.xpath("/html/body/div[1]")),156,15).perform();
+
+    }
+
+    public void clickResizable(){
+
+        driver.switchTo().defaultContent();
+        resizable_option.click();
+        Actions resize = new Actions(driver);
+        driver.switchTo().frame(0);
+      //  resize.dragAndDropBy(driver.findElement(By.xpath("//body/div[@id='container']/div[@id='content-wrapper']/div[1]/div[1]/iframe[1]")),156,15).perform();
+        resize.dragAndDropBy(resize_element, 156,15).perform();
+
+
 
     }
 

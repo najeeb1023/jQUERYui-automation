@@ -35,6 +35,14 @@ public class TestPlan {
 
     }
 
+    @Test(testName = "Resizable option.", priority = 3)
+    public void thirdTest(){
+
+        home.clickResizable();
+
+
+    }
+
     @AfterTest
     public void endTest(){
 

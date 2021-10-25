@@ -20,7 +20,7 @@ public class TestPlan {
     }
 
     @Test(testName = "Dragging the box.", priority = 1)
-    public void firstTest(){
+    public void didDraggableWork(){
 
         driver.manage().window().maximize();
         driver.get(Utils.BASE_URL);
@@ -29,14 +29,14 @@ public class TestPlan {
     }
 
     @Test(testName = "Dropping element in drop box.", priority = 2)
-    public void secondTest(){
+    public void didDroppableWork(){
 
         home.clickDroppable();
 
     }
 
     @Test(testName = "Resizable option.", priority = 3)
-    public void thirdTest(){
+    public void didResizableWork(){
 
         home.clickResizable();
 

@@ -58,7 +58,6 @@ public class HomePage extends PageObject{
         resizable_option.click();
         Actions resize = new Actions(driver);
         driver.switchTo().frame(0);
-      //  resize.dragAndDropBy(driver.findElement(By.xpath("//body/div[@id='container']/div[@id='content-wrapper']/div[1]/div[1]/iframe[1]")),156,15).perform();
         resize.dragAndDropBy(resize_element, 156,15).perform();
 
 

@@ -5,12 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.HomePage;
+import pages.Draggable;
+import pages.Droppable;
+import pages.Resizable;
 
 public class TestPlan {
 
     private final WebDriver driver = new ChromeDriver();
-    HomePage home = new HomePage(driver);
 
     @BeforeTest
     public static void main(String[] args) {
@@ -24,21 +25,24 @@ public class TestPlan {
 
         driver.manage().window().maximize();
         driver.get(Utils.BASE_URL);
-        home.clickDraggable();
+        Draggable drag_function = new Draggable(driver);
+        drag_function.clickDraggable();
 
     }
 
     @Test(testName = "Dropping element in drop box.", priority = 2)
     public void didDroppableWork(){
 
-        home.clickDroppable();
+        Droppable drop_function = new Droppable(driver);
+        drop_function.clickDroppable();
 
     }
 
     @Test(testName = "Resizable option.", priority = 3)
     public void didResizableWork(){
 
-        home.clickResizable();
+        Resizable resize_function = new Resizable(driver);
+        resize_function.clickResizable();
 
 
     }

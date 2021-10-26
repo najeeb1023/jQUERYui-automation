@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class SelectablePage extends PageObject{
 
@@ -36,6 +35,7 @@ public class SelectablePage extends PageObject{
         item_3.click();
         item_4.click();
         item_7.click();
+        hold_key.keyUp(Keys.CONTROL).perform();
 
 
 

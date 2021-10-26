@@ -5,10 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.DraggablePage;
-import pages.DroppablePage;
-import pages.ResizablePage;
-import pages.SelectablePage;
+import pages.*;
 
 public class TestPlan {
 
@@ -54,6 +51,13 @@ public class TestPlan {
         SelectablePage select_function = new SelectablePage(driver);
         select_function.selectItem347();
 
+    }
+
+    @Test(testName = "Sort elements.", priority = 5)
+    public void didSortElements(){
+
+        SortablePage sortable_function = new SortablePage(driver);
+        sortable_function.sortElements();
     }
 
     @AfterTest

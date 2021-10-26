@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class Droppable extends PageObject{
+public class DroppablePage extends PageObject{
 
 
     @FindBy(linkText = "Droppable")
@@ -15,7 +15,7 @@ public class Droppable extends PageObject{
 
 
 
-    public Droppable(WebDriver driver){
+    public DroppablePage(WebDriver driver){
         super(driver);
     }
 

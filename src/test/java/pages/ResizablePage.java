@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class Resizable extends PageObject{
+public class ResizablePage extends PageObject{
 
 
     @FindBy(xpath = "//a[contains(text(),'Resizable')]")
@@ -15,7 +15,7 @@ public class Resizable extends PageObject{
     private WebElement resize_element;
 
 
-    public Resizable (WebDriver driver){
+    public ResizablePage(WebDriver driver){
         super(driver);
     }
 

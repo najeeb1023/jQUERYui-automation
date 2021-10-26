@@ -5,9 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.Draggable;
-import pages.Droppable;
-import pages.Resizable;
+import pages.DraggablePage;
+import pages.DroppablePage;
+import pages.ResizablePage;
+import pages.SelectablePage;
 
 public class TestPlan {
 
@@ -25,7 +26,7 @@ public class TestPlan {
 
         driver.manage().window().maximize();
         driver.get(Utils.BASE_URL);
-        Draggable drag_function = new Draggable(driver);
+        DraggablePage drag_function = new DraggablePage(driver);
         drag_function.clickDraggable();
 
     }
@@ -33,7 +34,7 @@ public class TestPlan {
     @Test(testName = "Dropping element in drop box.", priority = 2)
     public void didDroppableWork(){
 
-        Droppable drop_function = new Droppable(driver);
+        DroppablePage drop_function = new DroppablePage(driver);
         drop_function.clickDroppable();
 
     }
@@ -41,9 +42,17 @@ public class TestPlan {
     @Test(testName = "Resizable option.", priority = 3)
     public void didResizableWork(){
 
-        Resizable resize_function = new Resizable(driver);
+        ResizablePage resize_function = new ResizablePage(driver);
         resize_function.clickResizable();
 
+
+    }
+
+    @Test(testName = "Select multiple elements", priority = 4)
+    public void didSelectMultipleItems(){
+
+        SelectablePage select_function = new SelectablePage(driver);
+        select_function.selectItem347();
 
     }
 

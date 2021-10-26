@@ -1,12 +1,14 @@
 package pages;
 
+import com.sun.source.tree.AssertTree;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
-public class Draggable extends PageObject{
+public class DraggablePage extends PageObject{
 
 
     @FindBy(xpath = "//a[contains(text(),'Draggable')]")
@@ -18,7 +20,7 @@ public class Draggable extends PageObject{
 
 
 
-    public Draggable(WebDriver driver){
+    public DraggablePage(WebDriver driver){
         super(driver);
     }
 

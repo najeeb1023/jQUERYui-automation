@@ -36,7 +36,7 @@ public class TestPlan {
 
     }
 
-    @Test(testName = "Resizable option.", priority = 3)
+    @Test(testName = "Resize element.", priority = 3)
     public void didResizableWork(){
 
         ResizablePage resize_function = new ResizablePage(driver);
@@ -56,6 +56,7 @@ public class TestPlan {
     @Test(testName = "Sort elements.", priority = 5)
     public void didSortElements(){
 
+        driver.get("https://jqueryui.com/");
         SortablePage sortable_function = new SortablePage(driver);
         sortable_function.sortElements();
     }

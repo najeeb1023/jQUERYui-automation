@@ -1,5 +1,6 @@
 package pages;
 
+import main.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,12 @@ public class SortablePage extends PageObject{
     @FindBy(xpath = "//body/ul[@id='sortable']/li[1]")
     private WebElement item_1;
 
+    @FindBy(xpath = "//body/ul[@id='sortable']/li[2]")
+    private WebElement item_2;
+
+    @FindBy(xpath = "//body/ul[@id='sortable']/li[5]")
+    private WebElement item_5;
+
 
 
 
@@ -34,8 +41,26 @@ public class SortablePage extends PageObject{
         JavascriptExecutor je = (JavascriptExecutor) driver;
         je.executeScript("arguments[0].scrollIntoView(true);",item_1);
         Actions drag_item = new Actions(driver);
-        drag_item.dragAndDropBy(driver.findElement(By.xpath("//body/ul[@id='sortable']/li[5]")), 300, 15 ).perform();
+        drag_item
+                .clickAndHold(item_5)
+                .moveToElement(driver.findElement(By.xpath("//body/ul[@id='sortable']/li[5]")), 0, -115 )
+                .build()
+                .perform();
 
+
+
+
+
+
+
+    }
+
+    public void myWaitMethod(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

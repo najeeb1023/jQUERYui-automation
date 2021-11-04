@@ -56,7 +56,6 @@ public class TestPlan {
     @Test(testName = "Sort elements.", priority = 5)
     public void didSortElements(){
 
-        driver.get("https://jqueryui.com/");
         SortablePage sortable_function = new SortablePage(driver);
         sortable_function.sortElements();
     }
